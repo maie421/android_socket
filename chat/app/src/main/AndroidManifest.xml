@@ -26,6 +26,10 @@
         <activity android:name=".chat.ChattingActivity" />
         <activity android:name=".main.MainActivity" />
 
+        <service android:name=".chat.ChatClientIO"
+            android:enabled="true"
+            android:exported="true"/>
+
     </application>
 
 </manifest>

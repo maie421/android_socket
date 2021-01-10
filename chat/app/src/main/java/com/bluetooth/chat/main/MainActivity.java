@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TabHost;
 import com.bluetooth.chat.FriendActivity;
+import com.bluetooth.chat.chat.ChatClientIO;
 import com.bluetooth.chat.chat.ChatRoomActivity;
 import com.bluetooth.chat.chat.ChattingActivity;
 import com.bluetooth.chat.R;
@@ -33,6 +34,9 @@ public class MainActivity extends ActivityGroup {
         ts2.setIndicator("ChatRoom") ;
         tabHost1.addTab(ts2) ;
 
+        // 서비스 시작
+        Intent serviceintent = new Intent(getApplicationContext(), ChatClientIO.class);
+        startService(serviceintent);
     }
 
 }

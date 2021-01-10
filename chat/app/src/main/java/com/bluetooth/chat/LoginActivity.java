@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bluetooth.chat.chat.ChatClientIO;
 import com.bluetooth.chat.main.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -31,8 +32,6 @@ public class LoginActivity extends AppCompatActivity {
     public void go_chat(View view){
         sharedSettings.set_something_int("user_idx",Integer.parseInt(idx_text.getText().toString()));
         sharedSettings.set_something_string("user_nickname",nickname_text.getText().toString());
-
-
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
