@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:padding="10dp"
+    android:background="#fff">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="추방하기"
+            android:textColor="#FF0000"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+
+            android:id="@+id/exile_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center"
+            android:text="정말로 xxx님을 추방하시겠어요?"
+            android:textColor="#000000"></TextView>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:paddingLeft="30dp"
+            android:text="추방사유"
+            android:layout_marginTop="10dp"
+
+            android:textColor="#000000"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="70dp"></TextView>
+
+
+        <CheckBox
+
+            android:id="@+id/exile_box0"
+            android:layout_width="200dp"
+            android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content"
+            android:text="방의 분위기와 전혀 다른태도"></CheckBox>
+
+        <CheckBox
+            android:id="@+id/exile_box1"
+
+            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_marginLeft="50dp"
+            android:text="사행성 광고행위"></CheckBox>
+
+        <CheckBox
+            android:id="@+id/exile_box2"
+            android:layout_width="200dp"
+            android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content"
+            android:text="부적절한 행동"></CheckBox>
+
+        <CheckBox
+            android:id="@+id/exile_box3"
+            android:layout_width="200dp"
+            android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content"
+            android:text="욕설 및 타인 비방"></CheckBox>
+
+        <CheckBox
+            android:id="@+id/exile_box4"
+            android:layout_width="200dp"
+            android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content"
+            android:text="기타"></CheckBox>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="393dp"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/exile_okbutton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="4.5"
+            android:background="#14448A"
+            android:textColor="#fff"
+
+            android:text="추방하기"></Button>
+
+        <Button
+            android:id="@+id/exile_canelbutton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4.5"
+            android:background="#D7E5F9"
+            android:textColor="#14448A"
+
+            android:text="취소"></Button>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

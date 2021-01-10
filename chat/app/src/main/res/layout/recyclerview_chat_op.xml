@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+
+        android:id="@+id/recycler_op_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:hint="fda"
+        android:paddingTop="3dp"
+        android:text=""
+
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+
+
+    <TextView
+        android:id="@+id/recycler_op_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요?"
+        android:gravity="center"
+        android:textColor="#000000"
+
+        android:background="@drawable/chatopop"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/recycler_op_name"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_op_name"
+        app:layout_constraintVertical_bias="0.0"></TextView>
+
+    <TextView
+        android:id="@+id/recycler_op_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:text="00시 00분"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_op_chat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/recycler_op_chat">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/recycler_op_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:text=""
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_op_chat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toEndOf="@+id/recycler_op_time">
+
+    </TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

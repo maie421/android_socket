@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/chatting_navi_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/chatting_navi_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="5기 이은열"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <ImageView
+        android:layout_marginLeft="5dp"
+        android:id="@+id/chatting_navi_room_maker"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/crown"
+        app:layout_constraintBottom_toBottomOf="@+id/chatting_navi_user_name"
+
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toEndOf="@+id/chatting_navi_user_name"
+        app:layout_constraintTop_toTopOf="@+id/chatting_navi_user_name"
+        app:layout_constraintVertical_bias="0.0"></ImageView>
+
+    <TextView
+        android:id="@+id/chatting_navi_user_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(나)"
+
+        android:textColor="#FF5722"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chatting_navi_room_maker"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

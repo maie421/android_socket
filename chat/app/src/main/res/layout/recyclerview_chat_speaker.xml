@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/speaker_chat"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:text="은열님이 방장이 되었습니다."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chat_speaker_radius"
+        android:gravity="center"
+        android:textColor="#FFFFFF"></TextView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/exit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+    <LinearLayout
+        android:padding="10dp"
+        android:background="#D7E5F9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:id="@+id/why_texe"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:textColor="#000000"
+            android:textStyle="bold"></TextView>
+        <TextView
+
+            android:layout_weight="8"
+            android:textStyle="bold"
+            android:id="@+id/exit_why"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:gravity="center"></TextView>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
