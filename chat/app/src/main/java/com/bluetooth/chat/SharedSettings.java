@@ -30,8 +30,12 @@ public class SharedSettings {
 
     }
 
-    public String get_something_string(String item){
-        String items= sharedPreferences.getString(item,DEFAULT_VALUE_STRING);
+    /**
+     * String 값 로드
+     * @param name
+     */
+    public String get_something_string(String name){
+        String items= sharedPreferences.getString(name,DEFAULT_VALUE_STRING);
         return items;
     }
 

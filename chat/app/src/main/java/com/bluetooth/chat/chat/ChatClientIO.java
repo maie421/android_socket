@@ -130,8 +130,10 @@ public class ChatClientIO extends Service {
     private Emitter.Listener onConnect = new Emitter.Listener() {
         @Override
         public void call(Object... args) {
+            String usernickname=sharedSettings.get_something_string("user_nickname");
+
             Log.d(TAG, "EVENT_CONNECT");
-            Log.d(TAG, "연결되었습니다!!");
+            Log.d(TAG, usernickname+": 연결되었습니다!!");
 
 /*            ActivityManager mngr = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
             String topstack_name = mngr.getAppTasks().get(0).getTaskInfo().topActivity.getShortClassName();
@@ -142,10 +144,11 @@ public class ChatClientIO extends Service {
 
             }*/
 
+
             // 서버로 전송할 데이터 생성 및 채널 입장 이벤트 보냄.
             JSONObject sendData = new JSONObject();
             try {
-                sendData.put(Constants.SEND_DATA_USERNAME, userName);
+                sendData.put(Constants.SEND_DATA_USERNAME, usernickname);
                 mSocket.emit(Constants.ADD_USER, sendData);
             } catch (JSONException e) {
                 Log.d(TAG,"Listener error:"+getPrintStackTrace(e));
