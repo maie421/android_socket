@@ -58,8 +58,7 @@
                 android:layout_weight="2"
                 android:onClick="send_message"
 
-                android:text="전송"
-                tools:ignore="OnClick"></Button>
+                android:text="전송"></Button>
 
         </LinearLayout>
 

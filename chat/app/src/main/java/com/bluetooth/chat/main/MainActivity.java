@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.widget.TabHost;
 import com.bluetooth.chat.FriendActivity;
 import com.bluetooth.chat.chat.ChatClientIO;
-import com.bluetooth.chat.chat.ChatRoomActivity;
 import com.bluetooth.chat.chat.ChattingActivity;
 import com.bluetooth.chat.R;
 

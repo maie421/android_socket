@@ -1,7 +1,7 @@
 package com.bluetooth.chat;
 
 public class Constants {
-    public static final String SOCKET_URL = "https://6b23e05d7e55.ngrok.io";
+    public static final String SOCKET_URL = "https://6fd6790cc2e1.ngrok.io";
     public static final String EVENT_ENTERED = "add user";
     public static final String EVENT_SYSTEM = "new message";
     public static final String EVENT_MESSAGE = "new message";

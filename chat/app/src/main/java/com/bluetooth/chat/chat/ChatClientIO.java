@@ -2,6 +2,7 @@ package com.bluetooth.chat.chat;
 
 import android.app.ActivityManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
@@ -13,6 +14,8 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.bluetooth.chat.Constants;
 import com.bluetooth.chat.SharedSettings;
 import com.bluetooth.chat.data_list.ChatMessage;
+import com.bluetooth.chat.data_list.ChattingModel;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,7 +23,9 @@ import org.json.JSONObject;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 
+import io.socket.client.Ack;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
@@ -28,11 +33,11 @@ import io.socket.engineio.client.transports.WebSocket;
 
 public class ChatClientIO extends Service {
     String TAG="ChatClientIO";
-
-    private String userName="1";
-    private Socket mSocket;
+    public static Socket mSocket;
 
     SharedSettings sharedSettings;
+
+    public static Gson gson;
 
     @Nullable
     @Override
@@ -64,10 +69,13 @@ public class ChatClientIO extends Service {
         Log.d(TAG, "onStartCommand 서비스시작");
         sharedSettings = new SharedSettings(this, "user_info");
 
+        gson = new Gson();
+
         setupSocketClient(); //소켓 연결 준비
         SocketClientConnect(); //소켓 연결
 
         mSocket.connect();
+       // ArrayList<ChattingModel> chat_datas = new ArrayList<>();
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -149,13 +157,24 @@ public class ChatClientIO extends Service {
             JSONObject sendData = new JSONObject();
             try {
                 sendData.put(Constants.SEND_DATA_USERNAME, usernickname);
-                mSocket.emit(Constants.ADD_USER, sendData);
+                mSocket.emit(Constants.ADD_USER, usernickname);
             } catch (JSONException e) {
                 Log.d(TAG,"Listener error:"+getPrintStackTrace(e));
             }
         }
 
     };
+
+    public static void emit_socket(Context context, String guide, Object object, Ack ack) {
+
+        switch (guide){
+            case "message":
+                mSocket.emit(Constants.EVENT_MESSAGE, object,ack);
+                break;
+        }
+
+
+    }
 
     /**
      * Message 전달 Listener
@@ -177,6 +196,8 @@ public class ChatClientIO extends Service {
 
         }
     };
+
+
 
     /**
      * 에러 String 으로 변환
